@@ -24,7 +24,8 @@
         "useConst": {
           "level": "warn",
           "fix": "none"
-        }
+        },
+        "useConsistentTypeDefinitions": "off"
       }
     }
   }

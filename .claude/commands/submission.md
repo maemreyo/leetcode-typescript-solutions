@@ -68,8 +68,8 @@ Create `src/problems-2026/<file-stem>.md` with this structure. Fields populated 
 ### Filling rules
 
 - **Stat label**: `Memory` when unit is `MB`, `Runtime` when unit is `ms`. If only one stat is in the playground, use it — don't fabricate the other.
-- **Complexity**: infer from the code. Walk the loops and data structures — `O(1)`, `O(log n)`, `O(n)`, `O(n log n)`, `O(n·m)`, `O(n²)`. Use `$$...$$` and LaTeX (`\log`, `\cdot`). If you truly can't tell, leave blank.
-- **Post-title (H3)**: `<Big-O> - TS with <approach>`. Approach is exactly one data structure (`Set()`, `Map()`, `Heap`, `Trie`) or technique (`two pointers`, `sliding window`, `binary search`, `DFS`, `BFS`, `DP`, `string reversal`, `recursion`). No filler like "efficient" or "optimal".
+- **Complexity**: infer from the code. Walk the loops and data structures — `O(1)`, `O(log n)`, `O(n)`, `O(n log n)`, `O(n·m)`, `O(n²)`. Inside the `$$...$$` math blocks, use LaTeX (`\log`, `\cdot`). If you truly can't tell, leave blank.
+- **Post-title (H3)**: `<Big-O> - TS with <approach>`. The Big-O here is **plain readable text** — no LaTeX. Use ASCII like `O(n)`, `O(n log n)`, `O(n * m)`, `O(n^2)`. Never `\log`, `\cdot`, or `$$...$$` in the H3. Approach is exactly one data structure (`Set()`, `Map()`, `Heap`, `Trie`) or technique (`two pointers`, `sliding window`, `binary search`, `DFS`, `BFS`, `DP`, `string reversal`, `recursion`). No filler like "efficient" or "optimal".
 - **Code**: paste verbatim from the playground. Don't reformat, rename, or "fix" bugs — if something looks off (e.g., `Math.max` with one arg), flag it in the reply, don't edit the code.
 
 ### If playground input is missing a field

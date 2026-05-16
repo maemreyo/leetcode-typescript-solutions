@@ -24,3 +24,5 @@ class MyHashSet {
     return !!this.hash[key];
   }
 }
+
+export {};

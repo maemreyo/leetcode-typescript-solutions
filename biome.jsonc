@@ -15,6 +15,9 @@
       "complexity": {
         "noForEach": "off"
       },
+      "suspicious": {
+        "useIterableCallbackReturn": "off"
+      },
       "style": {
         "useBlockStatements": "off",
         "useForOf": "off",
@@ -25,7 +28,8 @@
           "level": "warn",
           "fix": "none"
         },
-        "useConsistentTypeDefinitions": "off"
+        "useConsistentTypeDefinitions": "off",
+        "useConsistentArrowReturn": "off"
       }
     }
   }

@@ -22,3 +22,5 @@ function kWeakestRows(mat: number[][], k: number): number[] {
     .map(([key]) => parseInt(key))
     .slice(0, k);
 }
+
+export {};

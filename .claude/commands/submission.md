@@ -22,7 +22,7 @@ Beats
 <typescript code>         ← one or more function definitions
 ```
 
-Lines may have blank gaps. Be forgiving — grab the first `<num>. <Title>` line, the `leetcode.com/problems/<slug>` URL, the stat triplet (value/unit/beats%), and treat everything from the first `function`/`class`/`const`/`type`/`interface` keyword to EOF as the code.
+Lines may have blank gaps. Be forgiving — grab the first `<num>. <Title>` line, the `leetcode.com/problems/<slug>` URL, both stat triplets (value/unit/beats%) — Runtime and Memory — and treat everything from the first `function`/`class`/`const`/`type`/`interface` keyword to EOF as the code.
 
 ## Alternate input: `$ARGUMENTS`
 
@@ -51,7 +51,8 @@ Create `src/problems-2026/<file-stem>.md` with this structure. Fields populated 
 
 ## Submission
 
-<stat-label>: <value> <unit> · Beats <beats%>
+- <stat-label>: <value> <unit> · Beats <beats%>
+- <stat-label>: <value> <unit> · Beats <beats%>
 
 ## Code
 
@@ -67,14 +68,14 @@ Create `src/problems-2026/<file-stem>.md` with this structure. Fields populated 
 
 ### Filling rules
 
-- **Stat label**: `Memory` when unit is `MB`, `Runtime` when unit is `ms`. If only one stat is in the playground, use it — don't fabricate the other.
+- **Stat label**: `Memory` when unit is `MB`, `Runtime` when unit is `ms`. Emit one bullet per stat present (Runtime first, then Memory). If only one stat is in the playground, emit just that bullet — don't fabricate the other.
 - **Complexity**: infer from the code. Walk the loops and data structures — `O(1)`, `O(log n)`, `O(n)`, `O(n log n)`, `O(n·m)`, `O(n²)`. Inside the `$$...$$` math blocks, use LaTeX (`\log`, `\cdot`). If you truly can't tell, leave blank.
-- **Post-title (H3)**: `<Big-O> - TS with <approach>`. The Big-O here is **plain readable text** — no LaTeX. Use ASCII like `O(n)`, `O(n log n)`, `O(n * m)`, `O(n^2)`. Never `\log`, `\cdot`, or `$$...$$` in the H3. Approach is exactly one data structure (`Set()`, `Map()`, `Heap`, `Trie`) or technique (`two pointers`, `sliding window`, `binary search`, `DFS`, `BFS`, `DP`, `string reversal`, `recursion`). No filler like "efficient" or "optimal".
+- **Post-title (H3)**: `<Big-O> - TS with <approach>`. The Big-O here is **plain readable text** — no LaTeX. Use ASCII like `O(n)`, `O(n log n)`, `O(n * m)`, `O(n^2)`. Never `\log`, `\cdot`, or `$$...$$` in the H3. Approach names what the code concretely does. Prefer the actual data structure (`Set()`, `Map()`, `Heap`, `Trie`), technique (`two pointers`, `sliding window`, `binary search`, `DFS`, `BFS`, `DP`, `string reversal`, `recursion`), or the specific methods used (`reduce and includes`, `sort and reduce`) over a vague umbrella term — e.g. `reduce and includes`, not `substring search`. No filler like "efficient" or "optimal".
 - **Code**: paste verbatim from the playground. Don't reformat, rename, or "fix" bugs — if something looks off (e.g., `Math.max` with one arg), flag it in the reply, don't edit the code.
 
 ### If playground input is missing a field
 
-- No stats → leave `Memory:  · Beats` (template default).
+- No stats → leave `- Memory:  · Beats` (template default).
 - No code → leave the ```typescript``` block empty.
 - No H1 number but URL present → ask the user for the number once.
 
